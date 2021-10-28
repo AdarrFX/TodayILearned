@@ -32,4 +32,5 @@ app.get('/user', function(req, res, next) {
   res.send(req.user);
 });
 ```
-- 
+- Middlewares must be mounted (the code written) BEFORE the routes that depend on them
+- The req.query object holds parameters from GET requests URL?thing=value&otherthing=othervalue will store them in req.query.value, etc
