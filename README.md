@@ -24,11 +24,12 @@ Things that I learned while web developing
 - Middleware functions take 3 arguments (request object, response object, and next function in the request-response cycle)
 - Middlewares make a "stack" - they're executed in order.
 - You can chain middlewares to do various steps:
-'''app.get('/user', function(req, res, next) {
+```
+app.get('/user', function(req, res, next) {
   req.user = getTheUserSync();  // Hypothetical synchronous operation
   next();
 }, function(req, res) {
   res.send(req.user);
 });
-'''
+```
 - 
