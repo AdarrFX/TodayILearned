@@ -20,3 +20,15 @@ Things that I learned while web developing
 - res.json(JSOBJECT) as a function inside app.get() returns a json string
 - .env environment variables are accessible from the app using process.env.VARNAME where Varname is the variable name in the .env file
 - .env variables are always all UPPERCASE and have no spaces (eg, VAR_NAME=value)
+- Remember to use the dotenv package to load .env file into process.env (npm install dotenv), then at top of the myApp.js, import with require('dotenv').config()
+- Middleware functions take 3 arguments (request object, response object, and next function in the request-response cycle)
+- Middlewares make a "stack" - they're executed in order.
+- You can chain middlewares to do various steps:
+'''app.get('/user', function(req, res, next) {
+  req.user = getTheUserSync();  // Hypothetical synchronous operation
+  next();
+}, function(req, res) {
+  res.send(req.user);
+});
+'''
+- 
