@@ -35,4 +35,4 @@ app.get('/user', function(req, res, next) {
 - Middlewares must be mounted (the code written) BEFORE the routes that depend on them
 - The req.query object holds parameters from GET requests URL?thing=value&otherthing=othervalue will store them in req.query.value, etc
 - Bodyparser middleware (app.use(bodyParser.urlencoded({extended: false})) is used to parse data from POST requests (the extended one allows for Objects to be included in the POST request)
-- 
+- Bodyparser middleware puts the parsed requests into the req.body object
