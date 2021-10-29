@@ -36,3 +36,23 @@ app.get('/user', function(req, res, next) {
 - The req.query object holds parameters from GET requests URL?thing=value&otherthing=othervalue will store them in req.query.value, etc
 - Bodyparser middleware (app.use(bodyParser.urlencoded({extended: false})) is used to parse data from POST requests (the extended one allows for Objects to be included in the POST request)
 - Bodyparser middleware puts the parsed requests into the req.body object
+
+### Mongoose and MongoDB
+- Make sure to initialize Mongoose by using const mongoose = require('mongoose');
+- MongoDB database URI link goes in the .env variable
+- Mongo has schema - sort of like a table, I think, in SQL terms
+Example: Creating a new schema
+```
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const { Schema } = mongoose;
+
+  const personSchema = new Schema({
+    name:  String, // String is shorthand for {type: String}
+    age: Number,
+    favoriteFoods:   [String],
+  });
+
+let Person = mongoose.model('Person', personSchema);
+```
+- 
