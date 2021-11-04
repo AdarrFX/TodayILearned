@@ -56,7 +56,9 @@ const { Schema } = mongoose;
 let Person = mongoose.model('Person', personSchema);
 ```
 
-## October 28, 2021
+## November 4, 2021
 
 ### MongoDB
--
+- Model.update() is deprecated, no real point in using it.
+- Model.findOneAndUpdate, findOnByIdAndUpdate, Model.remove, Model.find - Mongoose methods
+- Queries are built and only executed with .exec() -> until then, they aren't actually sent.
