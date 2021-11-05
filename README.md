@@ -62,3 +62,15 @@ let Person = mongoose.model('Person', personSchema);
 - Model.update() is deprecated, no real point in using it.
 - Model.findOneAndUpdate, findOnByIdAndUpdate, Model.remove, Model.find - Mongoose methods
 - Queries are built and only executed with .exec() -> until then, they aren't actually sent.
+
+## November 5, 2021
+
+### Node
+- to use custom params in a route, put a colon in front of it :
+```
+app.get("/:word/echo", (req, res, next) => { //colon allows for custom params
+  let wordEcho = req.params.word;
+   res.json({"echo": wordEcho})
+});
+```
+
