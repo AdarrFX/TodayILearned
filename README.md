@@ -74,3 +74,6 @@ app.get("/:word/echo", (req, res, next) => { //colon allows for custom params
 });
 ```
 
+## November 18, 2021
+
+### Mongoose
